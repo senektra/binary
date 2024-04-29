@@ -1,0 +1,44 @@
+name: binary
+version: 1.1.0
+github: "senektra/binary"
+license: BSD-3-Clause
+author: "Ya boi rusy"
+maintainer: "me"
+copyright: "2024 me"
+
+extra-source-files: []
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: writes binary to stdout... slowly. Woo fun.
+
+dependencies:
+  - base >= 4.7 && < 5
+  - random
+  - unix
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-export-lists
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
+
+executables:
+  binary:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies: []
